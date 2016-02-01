@@ -8,6 +8,7 @@ namespace Airline
 {
     class Seat
     {
+       
         string SeatNumber;
         int SeatPrice;
         public Seat(string seatNumber, int seatPrice)
