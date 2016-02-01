@@ -8,9 +8,12 @@ namespace Airline
 {
     class Passenger
     {
-        public Passenger()
+        string Name;
+        Seat ChosenSeat;
+        public Passenger(string name, Seat chosenSeat)
         {
-
+            Name = name;
+            chosenSeat = ChosenSeat;
         }
     }
 }

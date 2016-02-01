@@ -8,9 +8,10 @@ namespace Airline
 {
     class Origin
     {
-        public Origin()
+        string FlightOrigin;
+        public Origin(string flightOrigin)
         {
-
+            FlightOrigin = flightOrigin;
         }
     }
 }

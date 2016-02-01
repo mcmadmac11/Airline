@@ -8,9 +8,10 @@ namespace Airline
 {
     class Destination
     {
-        public Destination()
+        string ChosenDestination;
+        public Destination(string chosenDestionation)
         {
-
+            ChosenDestination = chosenDestionation;
         }
     }
 }
