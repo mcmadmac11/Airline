@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace AirlineLibrary
 {
-    class Destination
+    public class Destination
     {
-        string ChosenDestination;
+        public string ChosenDestination;
         public Destination(string chosenDestionation)
         {
             ChosenDestination = chosenDestionation;
+        }
+        public Destination()
+        {
+
         }
     }
 }

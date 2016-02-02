@@ -21,5 +21,9 @@ namespace AirlineLibrary
             this.destination = destination;
             this.PassengerManifest = passengerManifest;
         }
+        public Flight()
+        {
+
+        }
     }
 }

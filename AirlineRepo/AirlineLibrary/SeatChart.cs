@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirlineLibrary
 {
-    class SeatChart
+    public class SeatChart
     {
         public Seat[,] SeatConfig = new Seat[10, 3];
         enum seatLetter { A, B, C, D, E, F, G, H, I, J };

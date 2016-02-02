@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace AirlineLibrary
 {
-    class Passenger
+    public class Passenger
     {
-        string Name;
-        Seat ChosenSeat;
+        public string Name;
+        public Seat ChosenSeat;
         public Passenger(string name, Seat chosenSeat)
         {
             Name = name;
-            chosenSeat = ChosenSeat;
+            ChosenSeat = chosenSeat;
+        }
+        public Passenger()
+        {
+            string name;
+
         }
     }
 }

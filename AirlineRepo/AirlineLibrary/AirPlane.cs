@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirlineLibrary
 {
-    class AirPlane
+    public class AirPlane
     {
         int PassengerCapacity;
         int Range;
@@ -18,6 +18,10 @@ namespace AirlineLibrary
             this.Range = range;
             this.MaintenanceStatus = maintenanceStatus;
             this.Schedule = schedule;
+        }
+        public AirPlane()
+        {
+
         }
     }
 }
