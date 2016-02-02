@@ -12,19 +12,18 @@ namespace AirlineLibrary
         enum seatLetter { A, B, C, D, E, F, G, H, I, J };
         public SeatChart()
         {
+            
         }
         public void populateSeatChart()
         {
-
-
-            for (int seatLetter = 0; seatLetter < 10; seatLetter++)
+            for(int seatLetter = 0; seatLetter<10; seatLetter++)
             {
-                for (int insideArrayCounter = 0; insideArrayCounter < 3; insideArrayCounter++)
+                for(int insideArrayCounter = 0; insideArrayCounter<3; insideArrayCounter++)
                 {
                     var x = SeatConfig[seatLetter, insideArrayCounter];
                 }
             }
-        }
-
+        } 
+        
     }
 }
