@@ -19,8 +19,9 @@ namespace WPFTester
             Destination SanDiego = new Destination("San Diego");
             AirPlane airplane = new AirPlane();
             Itinerary<object> itinerary = new Itinerary<object>(Milwaukee,SanDiego,airplane,Dan,seat);
-
             MyFileWriter mf = new MyFileWriter();
+            SeatChart seatChart = new SeatChart();
+            seatChart.populateSeatChart();
             mf.WriteToFile(Dan,Milwaukee,SanDiego);   
         
             
