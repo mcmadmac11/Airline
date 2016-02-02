@@ -1,0 +1,23 @@
+﻿Airline Project 
+    - Create a WPF project to manage the flights/front desk for an airline
+    - Your application must keep track of a number of flights.
+    - Your airline will have a number of aircrafts
+    - Each aircraft must have:
+        o Passenger capacity
+        o Range (how far the aircraft will travel)
+        o Maintenance status 
+        o Schedule
+    - Each flight will have:
+        o An aircraft assigned to it
+        o Flight number
+        o Origin
+        o Destination
+        o Passenger manifest.
+    - You need the ability to sell a seat on any given flight
+        o Each seat on a flight should have a price
+        o When selling a seat, the passengers information should be added to the passenger manifest
+    - Your User Interface (UI) should not contain any business logic and should not directly display stuff from     the     file reader class or directly write     to a file.
+    - Feel free to choose file type for storing data: text, XML, JSON are all options
+    - Use separation of responsibility. 
+        o For example, you will need a file reader class and a file writer class.
+    - Concentrate on the code. Work on polishing your UI only after your code is complete and working.
