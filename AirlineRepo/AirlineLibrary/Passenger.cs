@@ -12,13 +12,18 @@ namespace AirlineLibrary
         public Seat ChosenSeat;
         public Passenger(string name, Seat chosenSeat)
         {
-            Name = name;
-            ChosenSeat = chosenSeat;
+            this.Name = name;
+            this.ChosenSeat = chosenSeat;
         }
         public Passenger()
         {
             string name;
 
+        }
+
+        public void BuySeat(Passenger currentPassenger, Seat chosenSeat)
+        {
+            currentPassenger.ChosenSeat = chosenSeat;
         }
     }
 }
