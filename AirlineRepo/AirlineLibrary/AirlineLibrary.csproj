@@ -44,6 +44,7 @@
     <Compile Include="Destination.cs" />
     <Compile Include="FileWriter.cs" />
     <Compile Include="Flight.cs" />
+    <Compile Include="Itinerary.cs" />
     <Compile Include="Origin.cs" />
     <Compile Include="Passenger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

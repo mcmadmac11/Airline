@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirlineLibrary
 {
-    class Seat
+    public class Seat
     {
        
         string SeatNumber;
@@ -15,6 +15,10 @@ namespace AirlineLibrary
         {
             SeatNumber = seatNumber;
             SeatPrice = seatPrice;
+        }
+        public Seat()
+        {
+
         }
     }
 }

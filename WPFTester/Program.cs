@@ -12,8 +12,18 @@ namespace WPFTester
     {
         static void Main(string[] args)
         {
-            FileWriter fw = new FileWriter();
-            fw.WriteToXml();
+            Passenger Dan = new Passenger();
+            Dan.Name = "Dan";
+            Seat seat = new Seat("3A", 250);
+            Origin Milwaukee = new Origin("Milwaukee");
+            Destination SanDiego = new Destination("San Diego");
+            AirPlane airplane = new AirPlane();
+            Itinerary<object> itinerary = new Itinerary<object>(Milwaukee,SanDiego,airplane,Dan,seat);
+
+            MyFileWriter mf = new MyFileWriter();
+            mf.WriteToFile(Dan,Milwaukee,SanDiego);   
+        
+            
         }
     }
 }
