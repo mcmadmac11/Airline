@@ -16,9 +16,17 @@ namespace AirlineLibrary
             SeatNumber = seatNumber;
             SeatPrice = seatPrice;
         }
+
         public Seat()
         {
 
         }
+
+        public string getSeatName()
+        {
+            return this.SeatNumber;
+        }
+
+        
     }
 }
