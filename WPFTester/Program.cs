@@ -14,7 +14,7 @@ namespace WPFTester
         {
             Passenger Dan = new Passenger();
             Dan.Name = "Dan";
-            Seat seat1 = new Seat("A1", 300);
+            Seat seat1 = new Seat("A1", 300, true);
             Origin Milwaukee = new Origin("Milwaukee");
             Destination SanDiego = new Destination("San Diego");
             AirPlane airplane = new AirPlane();
@@ -23,10 +23,9 @@ namespace WPFTester
             SeatChart seatChart = new SeatChart();
             Passenger Adam = new Passenger("Adam",seat1);
             seatChart.populateSeatChart();
-           
             seatChart.BuySeat(Adam);
             seatChart.GetAvailableSeats();
-            Console.WriteLine(Adam.ChosenSeat);
+            Console.WriteLine(Adam.ChosenSeat.getSeatName());
             mf.WriteToFile(Dan,Milwaukee,SanDiego);
             Console.ReadLine();   
         

@@ -11,10 +11,12 @@ namespace AirlineLibrary
        
         string SeatNumber;
         int SeatPrice;
-        public Seat(string seatNumber, int seatPrice)
+        bool Available;
+        public Seat(string seatNumber, int seatPrice,bool available)
         {
-            SeatNumber = seatNumber;
-            SeatPrice = seatPrice;
+            this.SeatNumber = seatNumber;
+            this.SeatPrice = seatPrice;
+            this.Available = available;
         }
 
         public Seat()
@@ -32,9 +34,21 @@ namespace AirlineLibrary
                 return "null";
         }
 
-        public string setSeatName()
+        public string setSeatNameNull()
         {
             return this.SeatNumber = null;
+        }
+
+        public bool checkAvailability()
+        {
+            if (true)
+            {
+                return true;
+            }
+        }
+        public bool makeUnAvailable()
+        {
+            return this.Available = false;
         }
 
         

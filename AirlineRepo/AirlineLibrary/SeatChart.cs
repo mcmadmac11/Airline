@@ -26,7 +26,7 @@ namespace AirlineLibrary
             {
                 for (int insideArrayCounter = 0; insideArrayCounter < 3; insideArrayCounter++)
                 {
-                    SeatConfig[outsideArrayCounter, insideArrayCounter] = new Seat (seatNameLetter[outsideArrayCounter]+seatNameNumber[insideArrayCounter], seatPrice[insideArrayCounter]);
+                    SeatConfig[outsideArrayCounter, insideArrayCounter] = new Seat (seatNameLetter[outsideArrayCounter]+seatNameNumber[insideArrayCounter], seatPrice[insideArrayCounter], true);
                 }
             }
         }
@@ -37,14 +37,11 @@ namespace AirlineLibrary
             {
                 for (int insideArrayCounter = 0; insideArrayCounter < 3; insideArrayCounter++)
                 {
-                    if(SeatConfig[outsideArrayCounter, insideArrayCounter].getSeatName()!=null)
+                    if(SeatConfig[outsideArrayCounter, insideArrayCounter].checkAvailability()==true)
                     {
                         string displayName = SeatConfig[outsideArrayCounter, insideArrayCounter].getSeatName();
                         Console.WriteLine(displayName);
                     }
-                    
-                    //Console.WriteLine(SeatConfig[outsideArrayCounter,insideArrayCounter]);
-                    //Console.WriteLine("{0} {1}", seatNameLetter[outsideArrayCounter], seatNameNumber[insideArrayCounter]);
                 }
             }
         }
@@ -56,10 +53,11 @@ namespace AirlineLibrary
             {
                 for (int insideArrayCounter = 0; insideArrayCounter < 3; insideArrayCounter++)
                 {
-                    if (SeatConfig[outsideArrayCounter, insideArrayCounter].getSeatName() == seatName && seatName != null)
+                    if (SeatConfig[outsideArrayCounter, insideArrayCounter].checkAvailability() == true)
                     {
                         passenger.ChosenSeat = SeatConfig[outsideArrayCounter, insideArrayCounter];
-                        SeatConfig[outsideArrayCounter, insideArrayCounter].setSeatName();
+                        SeatConfig[outsideArrayCounter, insideArrayCounter].makeUnAvailable();
+                        //SeatConfig[outsideArrayCounter, insideArrayCounter].setSeatNameNull();
                     }
                 }
             }
