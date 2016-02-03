@@ -18,11 +18,26 @@ namespace Airline
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window 
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+        
+        private void book_flight_button_Click(object sender, RoutedEventArgs e)
+        {
+            BookFlightWindow bookFlightWindow = new BookFlightWindow();
+            bookFlightWindow.Show();
+            
+
+        }
+
+        private void view_itinerary_button_Click(object sender, RoutedEventArgs e)
+        {
+            ViewItineraryWindow viewItineraryWindow = new ViewItineraryWindow();
+            viewItineraryWindow.Show();
+
         }
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seat.cs" />
     <Compile Include="SeatChart.cs" />
+    <Compile Include="UIBridge.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProjectSpecs.txt" />
