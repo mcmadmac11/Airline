@@ -53,7 +53,7 @@ namespace AirlineLibrary
             {
                 for (int insideArrayCounter = 0; insideArrayCounter < 3; insideArrayCounter++)
                 {
-                    if (SeatConfig[outsideArrayCounter, insideArrayCounter].checkAvailability() == true)
+                    if (SeatConfig[outsideArrayCounter, insideArrayCounter].getSeatName() == seatName && SeatConfig[outsideArrayCounter, insideArrayCounter].checkAvailability() == true)
                     {
                         passenger.ChosenSeat = SeatConfig[outsideArrayCounter, insideArrayCounter];
                         SeatConfig[outsideArrayCounter, insideArrayCounter].makeUnAvailable();

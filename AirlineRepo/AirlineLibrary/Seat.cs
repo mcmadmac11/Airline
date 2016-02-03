@@ -26,12 +26,7 @@ namespace AirlineLibrary
 
         public string getSeatName()
         {
-            if (this.SeatNumber != null)
-            {
                 return this.SeatNumber;
-            }
-            else
-                return "null";
         }
 
         public string setSeatNameNull()
