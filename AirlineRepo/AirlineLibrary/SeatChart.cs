@@ -8,97 +8,117 @@ namespace AirlineLibrary
 {
     public class SeatChart
     {
-        public Seat[,] SeatConfig;
-        public string[] seatNameLetter;
-        public string[] seatNameNumber;
-        public int[] seatPrice;
-        public SeatChart()
+        Seat seat1 = new Seat();
+        Seat seat2 = new Seat();
+        Seat seat3 = new Seat();
+        public Dictionary<int, Seat[]> AirplaneSeating = new Dictionary<int, Seat[]>();
+        public int NumberOfRows;
+        public bool IsAvailable = true;
+        public void SeedSeatChart(int numberOfRows)
         {
-            SeatConfig = new Seat[10, 3];
-            seatNameLetter = new string[10] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
-            seatNameNumber = new string[3] { "1", "2", "3" };
-            seatPrice = new int[3] {300, 200, 100 };
-        }
+            seat1.isAvailable = false;
+            this.NumberOfRows = numberOfRows;
+            for (int i = 1; i <= NumberOfRows; i++)
+            {
+                AirplaneSeating.Add(i, new Seat[] { seat1, seat2, seat3 });
+            }
+            foreach (KeyValuePair<int, Seat[]> kvp in AirplaneSeating)
+            {
+                Console.WriteLine(string.Format("Row:{0} Seat A:{1} B:{2} C:{3} ", kvp.Key, kvp.Value[0].isAvailable, kvp.Value[1].isAvailable, kvp.Value[2].isAvailable));
+                string SeatingConfiguration = Console.ReadLine();
+                Console.WriteLine(SeatingConfiguration);
+            }
 
-        public void populateSeatChart()
-        {
-            for(int outsideArrayCounter = 0; outsideArrayCounter < 10; outsideArrayCounter++)
-            {
-                for (int insideArrayCounter = 0; insideArrayCounter < 3; insideArrayCounter++)
-                {
-                    SeatConfig[outsideArrayCounter, insideArrayCounter] = new Seat (seatNameLetter[outsideArrayCounter]+seatNameNumber[insideArrayCounter], seatPrice[insideArrayCounter], true);
-                }
-            }
         }
-        
-        public void GetAvailableSeats()
+        public void CheckTicketAvailability(Dictionary<int, Seat[]> flightSeating)
         {
-            for (int outsideArrayCounter = 0; outsideArrayCounter < 10; outsideArrayCounter++)
-            {
-                for (int insideArrayCounter = 0; insideArrayCounter < 3; insideArrayCounter++)
-                {
-                    if(SeatConfig[outsideArrayCounter, insideArrayCounter].checkAvailability()==true)
-                    {
-                        string displayName = SeatConfig[outsideArrayCounter, insideArrayCounter].getSeatName();
-                        Console.WriteLine(displayName);
-                    }
-                }
-            }
-        }
 
-        public void BuySeat(Passenger passenger)
-        {
-            string seatName = passenger.getPassengerSeatName();
-            for (int outsideArrayCounter = 0; outsideArrayCounter < 10; outsideArrayCounter++)
+            for (int i = 0; i < AirplaneSeating.Values.Count; i++)
             {
-                for (int insideArrayCounter = 0; insideArrayCounter < 3; insideArrayCounter++)
+                int index = i;
+                foreach (KeyValuePair<int, Seat[]> kvp in AirplaneSeating)
                 {
-                    if (SeatConfig[outsideArrayCounter, insideArrayCounter].getSeatName() == seatName && SeatConfig[outsideArrayCounter, insideArrayCounter].checkAvailability() == true)
+                    if (kvp.Value[index].isAvailable != true)
                     {
-                        passenger.ChosenSeat = SeatConfig[outsideArrayCounter, insideArrayCounter];
-                        SeatConfig[outsideArrayCounter, insideArrayCounter].makeUnAvailable();
-                        //SeatConfig[outsideArrayCounter, insideArrayCounter].setSeatNameNull();
+                        Console.WriteLine("I'm Sorry, that seat is not available for this flight.  Please select again");
                     }
+
                 }
             }
+
         }
     }
 }
 
-//GetAvailableSeats();
-//Console.WriteLine("what seat do you want to buy?");
-// currentPassenger.ChosenSeat = SeatConfig[seatNameLetter,seatNameNumber];
-//Console.WriteLine(currentPassenger.ChosenSeat);
-//Seat chosenSeat = currentPassenger.ChosenSeat;
-//if (chosenSeat != null)
+
+
+//foreach (var item in availabilityCheck.Select((value, index) => new { value, index }))
 //{
-//    currentPassenger.ChosenSeat = chosenSeat;
-//    chosenSeat = null;
-//}
-//else
-//{
-//    Console.WriteLine("that seat is already pearchesd");
-//}
+//    string currentValue;
+//    int currentIndex = item.index;
+//    if (item.value == true) { currentValue = "Available"; }
+//    else { currentValue = null; }
 
-
-
-//public  getLocationInArray(Seat seat)
-//{
-
-//    for (int outsideArrayCounter = 0; outsideArrayCounter < 10; outsideArrayCounter++)
 //    {
-//        for (int insideArrayCounter = 0; insideArrayCounter < 3; insideArrayCounter++)
+//        Console.WriteLine(currentIndex + currentValue);
+//    }
+
+//}
+
+
+//public Seat[,] SeatConfig;
+//public string[] seatNameLetter;
+//public string[] seatNameNumber;
+//public int[] seatPrice;
+//public SeatChart()
+//{
+//SeatConfig = new Seat[10, 3];
+//seatNameLetter = new string[10] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
+//seatNameNumber = new string[3] { "1", "2", "3" };
+//seatPrice = new int[3] {300, 200, 100 };
+//}
+
+//public void populateSeatChart()
+//{
+//    for(int i = 0; i < 10; i++)
+//    {
+//        for (int x = 0; x < 3; x++)
 //        {
-
-//            string displayName = SeatConfig[outsideArrayCounter, insideArrayCounter].getSeatName();
-//            Console.WriteLine(displayName);
-//            if(displayName==seat.getSeatName())
-//            {
-//                return SeatConfig[outsideArrayCounter, insideArrayCounter];
-//            }
-
+//            SeatConfig[i, x] = new Seat (seatNameLetter[i]+seatNameNumber[x], seatPrice[x], true);
 //        }
 //    }
 //}
+
+//public void GetAvailableSeats()
+//{
+//    for (int i = 0; i < 10; i++)
+//    {
+//        for (int x = 0; x < 3; x++)
+//        {
+//            if(SeatConfig[i, x].checkAvailability()==true)
+//            {
+//                string displayName = SeatConfig[i, x].getSeatName();
+//                Console.WriteLine(displayName);
+//            }
+//        }
+//    }
+//}
+
+//public void BuySeat(Passenger passenger)
+//{
+//    string seatName = passenger.getPassengerSeatName();
+//    for (int i = 0; i < 10; i++)
+//    {
+//        for (int x = 0; x < 3; x++)
+//        {
+//            if (SeatConfig[i, x].getSeatName() == seatName && SeatConfig[i, x].checkAvailability() == true)
+//            {
+//                passenger.ChosenSeat = SeatConfig[i, x];
+//                SeatConfig[i, x].makeUnAvailable();
+//            }
+//        }
+//    }
+//}
+
 
 

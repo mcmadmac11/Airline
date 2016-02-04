@@ -18,10 +18,10 @@ namespace AirlineLibrary
             this.SeatPrice = seatPrice;
             this.Available = available;
         }
-
+        public bool isAvailable;
         public Seat()
         {
-
+            this.isAvailable = true;
         }
 
         public string getSeatName()

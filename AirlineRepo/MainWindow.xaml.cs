@@ -23,21 +23,20 @@ namespace Airline
         public MainWindow()
         {
             InitializeComponent();
-        }
-        
-        private void book_flight_button_Click(object sender, RoutedEventArgs e)
-        {
-            BookFlightWindow bookFlightWindow = new BookFlightWindow();
-            bookFlightWindow.Show();
-            
-
+            EventModel _event = new EventModel(){};
+            this.DataContext = _event;
         }
 
         private void view_itinerary_button_Click(object sender, RoutedEventArgs e)
         {
             ViewItineraryWindow viewItineraryWindow = new ViewItineraryWindow();
             viewItineraryWindow.Show();
+        }
 
+        private void book_flight_button_Click_1(object sender, RoutedEventArgs e)
+        {
+            BookFlightWindow bookFlightWindow = new BookFlightWindow();
+            bookFlightWindow.Show();
         }
     }
 }

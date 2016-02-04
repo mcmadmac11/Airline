@@ -5,8 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Airline"
         mc:Ignorable="d"
-        Title="ViewItineraryWindow" Height="300" Width="300">
-    <Grid>
-        
+        Title="ViewItineraryWindow" Height="300" Width="600">
+    <Grid Margin="0,0,3.6,0.4">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="lightBlueBackground.jpg" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Column="1" VerticalAlignment="Center" FontFamily="Trebuchet MS" 
+FontWeight="Bold" FontSize="18" Foreground="#0066cc" Height="30" Margin="0,0,184.4,0.4">
+            Itinerary For:
+        </Label>
+        <Grid Margin="0,9.6,0.4,10.4" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Width="572">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+
+            <!-- Name -->
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Orientation="Vertical" Margin="0,0,-0.2,0.4">
+                <Label Margin="0,0,0,5" FontWeight="Bold">Name:</Label>
+                
+            </StackPanel>
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Vertical">
+                <Label Margin="0,0,0,5" FontWeight="Bold">Date:</Label>
+            </StackPanel>
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Orientation="Vertical">
+                <Label Margin="0,0,0,5" FontWeight="Bold">Departs From:</Label>
+            </StackPanel>
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Orientation="Vertical">
+                <Label Margin="0,0,0,5" FontWeight="Bold">Arrives At:</Label>
+            </StackPanel>
+            
+
+
+
+
+
+
+        </Grid>
+
+
     </Grid>
 </Window>

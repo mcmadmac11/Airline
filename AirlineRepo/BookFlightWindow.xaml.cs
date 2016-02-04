@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using AirlineLibrary;
 using System.ComponentModel;
 
+
 namespace Airline
 {
     /// <summary>
@@ -25,9 +26,20 @@ namespace Airline
 
         public BookFlightWindow()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            EventModel _event = new EventModel() { };
+            this.DataContext = _event;
         }
 
+        private void EventDate_CalendarClosed(object sender, RoutedEventArgs e)
+        {
+            EventModel _event = new EventModel();
+            this.DataContext = _event;
+        }
 
+        private void EventDate_CalendarOpened(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

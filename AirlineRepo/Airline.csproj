@@ -55,9 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EventModel.cs" />
+    <Compile Include="ItineraryView.cs" />
     <Compile Include="ItineraryWindow.xaml.cs">
       <DependentUpon>ItineraryWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PassengerView.cs" />
     <Compile Include="ViewItineraryWindow.xaml.cs">
       <DependentUpon>ViewItineraryWindow.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,9 @@
       <Project>{71bf1f3b-49df-47ec-919f-b1334e1b5802}</Project>
       <Name>AirlineLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="150324_flights-hero-image_1330x742.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
