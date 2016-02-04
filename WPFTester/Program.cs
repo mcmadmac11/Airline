@@ -14,8 +14,7 @@ namespace WPFTester
         {
             SeatChart sec = new SeatChart();
             sec.SeedSeatChart(10);
-            sec.CheckTicketAvailability(sec.AirplaneSeating);
-            Console.WriteLine(sec.AirplaneSeating.Keys);
+            //Console.WriteLine(sec.AirplaneSeating.Keys);
             //Passenger Dan = new Passenger();
             //Dan.Name = "Dan";
             //Seat seat1 = new Seat("A1", 300, true);

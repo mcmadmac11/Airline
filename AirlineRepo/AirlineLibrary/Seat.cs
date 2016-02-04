@@ -11,17 +11,21 @@ namespace AirlineLibrary
        
         string SeatNumber;
         int SeatPrice;
-        bool Available;
+        public bool Available;
         public Seat(string seatNumber, int seatPrice,bool available)
         {
             this.SeatNumber = seatNumber;
             this.SeatPrice = seatPrice;
             this.Available = available;
         }
-        public bool isAvailable;
+
         public Seat()
         {
-            this.isAvailable = true;
+            this.Available = true;
+        }
+        public string getSeatValue()
+        {
+            return this.SeatPrice.ToString();
         }
 
         public string getSeatName()

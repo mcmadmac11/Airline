@@ -8,41 +8,38 @@ namespace AirlineLibrary
 {
     public class SeatChart
     {
-        Seat seat1 = new Seat();
-        Seat seat2 = new Seat();
-        Seat seat3 = new Seat();
+        Seat seat1 = new Seat("A",0,true);
+        Seat seat2 = new Seat("B",0,true);
+        Seat seat3 = new Seat("C",0,true);
         public Dictionary<int, Seat[]> AirplaneSeating = new Dictionary<int, Seat[]>();
         public int NumberOfRows;
-        public bool IsAvailable = true;
+
         public void SeedSeatChart(int numberOfRows)
         {
-            seat1.isAvailable = false;
+            
             this.NumberOfRows = numberOfRows;
             for (int i = 1; i <= NumberOfRows; i++)
             {
                 AirplaneSeating.Add(i, new Seat[] { seat1, seat2, seat3 });
+                Console.WriteLine(string.Format("Row: {0} Seat A: {1} Seat B: {2} Seat C: {3}",i,seat1.Available,seat2.Available,seat3.Available ));
             }
-            foreach (KeyValuePair<int, Seat[]> kvp in AirplaneSeating)
-            {
-                Console.WriteLine(string.Format("Row:{0} Seat A:{1} B:{2} C:{3} ", kvp.Key, kvp.Value[0].isAvailable, kvp.Value[1].isAvailable, kvp.Value[2].isAvailable));
-                string SeatingConfiguration = Console.ReadLine();
-                Console.WriteLine(SeatingConfiguration);
-            }
-
         }
         public void CheckTicketAvailability(Dictionary<int, Seat[]> flightSeating)
         {
 
-            for (int i = 0; i < AirplaneSeating.Values.Count; i++)
+            for (int i = 0; i < AirplaneSeating.Values.Count -1; i++)
             {
-                int index = i;
+                
                 foreach (KeyValuePair<int, Seat[]> kvp in AirplaneSeating)
                 {
-                    if (kvp.Value[index].isAvailable != true)
+                    if (kvp.Value[i].Available != true)
                     {
                         Console.WriteLine("I'm Sorry, that seat is not available for this flight.  Please select again");
                     }
-
+                    else
+                    {
+                        Console.WriteLine("Seat Purchase Confirmed");
+                    }
                 }
             }
 
