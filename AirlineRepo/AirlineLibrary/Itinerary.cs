@@ -8,6 +8,10 @@ namespace AirlineLibrary
 {
     public class Itinerary
     {
+        public Itinerary()
+        {
+
+        }
         //public List<T> passengerItinerary;
         //public List<T> PassengerItinerary
         //{
