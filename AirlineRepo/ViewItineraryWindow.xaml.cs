@@ -20,22 +20,28 @@ namespace Airline
     /// </summary>
     public partial class ViewItineraryWindow : Window
     {
-        public AirPlane airPlane= new AirPlane(30,120,true,"Kanto to Johto");
+        public AirPlane airPlane = new AirPlane(30, 120, true, "Kanto to Johto");
         public List<Passenger> passengerManifest = new List<Passenger>();
-        public Origin myOrigin = new Origin();
-        public Destination myDestination = new Destination();
+        public string myOrigin = "Kanto";
+        public string myDestination = "Johto";
+        Seat seat = new Seat(null, 300, true);
+        Passenger passenger = new Passenger("Adam",null);
+        
 
         public ViewItineraryWindow()
         {
             InitializeComponent();
-            Flight myFlight = new Flight(airPlane, 101, myOrigin, myDestination, passengerManifest) { };
-            this.DataContext = myFlight;
-            //PassengerView Passenger = new PassengerView("Adam", null) {Name="Adam", ChosenSeat = null };
-            //Origin origin = new Origin("Kanto") {FlightOrigin="Kanto"};
+            Itinerary myItinerary = new Itinerary(myOrigin, myDestination, airPlane, passenger, seat) { originationCity = myOrigin, destinationCity = myDestination, plane = airPlane, traveler = passenger, assignedSeat = seat };
+            this.DataContext = myItinerary;
+            //passengerManifest.Add(passenger);
+            //Flight myFlight = new Flight(airPlane, 101, myOrigin, myDestination, passengerManifest) {m};
+
+            //this.DataContext = myFlight;
+            //PassengerView Passenger = new PassengerView("Adam", null) { Name = "Adam", ChosenSeat = null };
+            //Origin origin = new Origin("Kanto") { FlightOrigin = "Kanto" };
             //this.DataContext = Passenger;
             //this.DataContext = origin;
         }
-
     }
 }
         //Flight myFlight = new Flight(AirPlane airPlane, int flightNumber, Origin origin, Destination destination, List < Passenger > passengerManifest);

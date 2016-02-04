@@ -48,7 +48,7 @@ namespace Airline
         }
         public ItineraryView()
         {
-            this._originCity = new Origin();
+            this._originCity = new Origin("Kanto");
         }
 
 

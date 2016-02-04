@@ -8,7 +8,7 @@ namespace AirlineLibrary
 {
     public class UIBridge
     {
-        Seat _seat = new Seat();
+        Seat _seat = new Seat(null,300,true);
         public void ChooseSeat(string seatNumber, int price, bool isAvailable)
         {
             Seat seat = new Seat(seatNumber, price, isAvailable);

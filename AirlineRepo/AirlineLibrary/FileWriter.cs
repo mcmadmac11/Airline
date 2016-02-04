@@ -11,13 +11,13 @@ namespace AirlineLibrary
 
     public class MyFileWriter
     {
-        Passenger p = new Passenger();
-        AirPlane a = new AirPlane();
-        Destination d = new Destination();
-        Flight f = new Flight();
-        Origin o = new Origin();
-        Seat s = new Seat();
-        SeatChart sc = new SeatChart();
+        public Passenger p = new Passenger();
+        public AirPlane a = new AirPlane(30,200,true,"Kanto to Johto");
+        public Destination d = new Destination();
+        public Origin o = new Origin("Kanto");
+        public Seat s = new Seat(null,300,true);
+        public SeatChart sc = new SeatChart();
+        public Flight f = new Flight(null,101,null,null,null);
         public void WriteToFile(Passenger P, Origin O, Destination D)
         {
             this.p = P;

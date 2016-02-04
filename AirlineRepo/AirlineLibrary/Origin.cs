@@ -9,13 +9,19 @@ namespace AirlineLibrary
     public class Origin
     {
         public string FlightOrigin;
+
+        public string flightOrigin
+        {
+            get { return FlightOrigin; }
+            set { FlightOrigin = value; }
+        }
         public Origin(string flightOrigin)
         {
             FlightOrigin = flightOrigin;
         }
-        public Origin()
-        {
+        //public Origin()
+        //{
 
-        }
+        //}
     }
 }

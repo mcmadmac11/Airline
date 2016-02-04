@@ -9,9 +9,27 @@ namespace AirlineLibrary
     public class Seat
     {
        
-        string SeatNumber;
-        int SeatPrice;
+        public string SeatNumber;
+        public string seatNumber
+        {
+            get { return SeatNumber; }
+            set { SeatNumber = value; }
+        }
+
+        public int SeatPrice;
+        public int seatPrice
+        {
+            get { return SeatPrice; }
+            set { SeatPrice = value; }
+        }
+
+
         public bool Available;
+        public bool available
+        {
+            get { return Available; }
+            set { Available = value; }
+        }
         public Seat(string seatNumber, int seatPrice,bool available)
         {
             this.SeatNumber = seatNumber;
@@ -19,10 +37,10 @@ namespace AirlineLibrary
             this.Available = available;
         }
 
-        public Seat()
-        {
-            this.Available = true;
-        }
+        //public Seat()
+        //{
+        //    this.Available = true;
+        //}
         public string getSeatValue()
         {
             return this.SeatPrice.ToString();
