@@ -18,6 +18,18 @@ namespace Airline
             set { _name = value; }
         }
 
+        private Seat chosenSeat;
 
+        public Seat ChosenSeat
+        {
+            get { return chosenSeat; }
+            set { chosenSeat = value; }
+        }
+
+        public PassengerView(string name, Seat chosenSeat)
+        {
+            this.Name = name;
+            this.ChosenSeat = chosenSeat;
+        }
     }
 }
