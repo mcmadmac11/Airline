@@ -39,7 +39,6 @@ namespace AirlineLibrary
         {
             return this.ChosenSeat.getSeatName();
         }
-
         //public void BuySeat(Passenger currentPassenger, Seat chosenSeat)
         //{
         //    if(chosenSeat!=null)
