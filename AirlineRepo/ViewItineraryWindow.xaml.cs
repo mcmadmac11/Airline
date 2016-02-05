@@ -25,8 +25,8 @@ namespace Airline
         public string myOrigin = "Kanto";
         public string myDestination = "Johto";
         Seat seat = new Seat(null, 300, true);
-        Passenger passenger = new Passenger("Adam",null);
-        
+        Passenger passenger = new Passenger("Adam", null);
+
 
         public ViewItineraryWindow()
         {

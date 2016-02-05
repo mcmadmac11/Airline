@@ -39,7 +39,7 @@ FontWeight="Bold" FontSize="18" Foreground="#0066cc" Height="30" Margin="0,0,184
             <!-- Name -->
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Orientation="Vertical" Margin="0,0,-0.2,0.4">
                 <Label Margin="0,0,0,5" FontWeight="Bold">Name:</Label>
-                <TextBlock Text="{Binding Name}"></TextBlock>
+                <TextBlock Text="{Binding Traveler.Name}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Vertical">
                 <Label Margin="0,0,0,5" FontWeight="Bold">Date:</Label>
@@ -50,16 +50,8 @@ FontWeight="Bold" FontSize="18" Foreground="#0066cc" Height="30" Margin="0,0,184
             </StackPanel>
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Orientation="Vertical">
                 <Label Margin="0,0,0,5" FontWeight="Bold">Arrives At:</Label>
+                <TextBlock Text="{Binding DestinationCity}"></TextBlock>
             </StackPanel>
-            
-
-
-
-
-
-
         </Grid>
-
-
     </Grid>
 </Window>
