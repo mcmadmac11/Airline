@@ -7,7 +7,7 @@
         o Range (how far the aircraft will travel)
         o Maintenance status 
         o Schedule
-    - Each flight will have:
+    - Each flight will have:  * Flight object contains flightList with data below
         o An aircraft assigned to it
         o Flight number
         o Origin
