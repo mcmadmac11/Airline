@@ -8,8 +8,11 @@ namespace AirlineLibrary
 {
     public class Flight
     {
+        SeatChart chart = new SeatChart();
+
+
         public AirPlane airPlane;
-        
+
         public AirPlane _airPlane
         {
             get { return airPlane; }
@@ -56,9 +59,11 @@ namespace AirlineLibrary
             this.PassengerManifest = passengerManifest;
         }
 
-        //public Flight()
-        //{
 
-        //}
+
+
+
+
     }
 }
+

@@ -8,42 +8,46 @@ namespace AirlineLibrary
 {
     public class SeatChart
     {
-        Seat seat1 = new Seat("A",0,true);
-        Seat seat2 = new Seat("B",0,true);
-        Seat seat3 = new Seat("C",0,true);
-        public Dictionary<int, Seat[]> AirplaneSeating = new Dictionary<int, Seat[]>();
+        TextFileWriter writer = new TextFileWriter();
+        Seat seat1 = new Seat("A", 300, true);
+        Seat seat2 = new Seat("B", 200, true);
+        Seat seat3 = new Seat("C", 300, true);
+        public Seat[] SeatRow = new Seat[3];
+        public Dictionary<int, Seat[]> AirplaneSeating;
         public int NumberOfRows;
 
-        public void SeedSeatChart(int numberOfRows)
+
+        public Dictionary<int, Seat[]> SeedSeatChart(int numberOfRows)
         {
-            
+            this.AirplaneSeating = new Dictionary<int, Seat[]>();
             this.NumberOfRows = numberOfRows;
             for (int i = 1; i <= NumberOfRows; i++)
             {
                 AirplaneSeating.Add(i, new Seat[] { seat1, seat2, seat3 });
-                Console.WriteLine(string.Format("Row: {0} Seat A: {1} Seat B: {2} Seat C: {3}",i,seat1.Available,seat2.Available,seat3.Available ));
+                Console.WriteLine(string.Format("Row: {0} Seat A: {1} Seat B: {2} Seat C: {3}", i, seat1.isAvailable, seat2.isAvailable, seat3.isAvailable));
+
             }
+            
+            return AirplaneSeating;
         }
-        public void CheckTicketAvailability(Dictionary<int, Seat[]> flightSeating)
+        public List<Seat[]> AddToList(Dictionary<int, Seat[]> flightSeating)
         {
-
-            for (int i = 0; i < AirplaneSeating.Values.Count -1; i++)
+            flightSeating = AirplaneSeating;
+            List<Seat[]> SeatList = new List<Seat[]>();
+            SeatList = flightSeating.Values.ToList();
+            foreach (Seat[] row in SeatList)
             {
-                
-                foreach (KeyValuePair<int, Seat[]> kvp in AirplaneSeating)
-                {
-                    if (kvp.Value[i].Available != true)
-                    {
-                        Console.WriteLine("I'm Sorry, that seat is not available for this flight.  Please select again");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Seat Purchase Confirmed");
-                    }
-                }
+                Console.WriteLine(string.Format("{0}|{1}|{2}", seat1.seatNumber, seat2.seatNumber, seat3.seatNumber));      
             }
-
+            
+            return SeatList;
         }
+
+        public override string ToString()
+        {
+            return (string.Format("{0}|{1}|{2}", seat1.seatNumber, seat2.seatNumber, seat3.seatNumber));
+        }
+
     }
 }
 

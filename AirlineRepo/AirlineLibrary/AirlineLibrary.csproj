@@ -51,6 +51,7 @@
     <Compile Include="Seat.cs" />
     <Compile Include="SeatChart.cs" />
     <Compile Include="SerializableDictionary.cs" />
+    <Compile Include="TextFileWriter.cs" />
     <Compile Include="UIBridge.cs" />
   </ItemGroup>
   <ItemGroup>

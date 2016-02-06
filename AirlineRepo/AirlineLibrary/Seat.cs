@@ -24,23 +24,23 @@ namespace AirlineLibrary
         }
 
 
-        public bool Available;
-        public bool available
+        public bool isAvailable;
+        public bool IsAvailable
         {
-            get { return Available; }
-            set { Available = value; }
+            get { return isAvailable; }
+            set { isAvailable = value; }
         }
-        public Seat(string seatNumber, int seatPrice,bool available)
+        public Seat(string seatNumber, int seatPrice,bool isAvailable)
         {
             this.SeatNumber = seatNumber;
             this.SeatPrice = seatPrice;
-            this.Available = available;
+            this.isAvailable = isAvailable;
         }
 
-        //public Seat()
-        //{
-        //    this.Available = true;
-        //}
+        public Seat()
+        {
+            this.isAvailable = true;
+        }
         public string getSeatValue()
         {
             return this.SeatPrice.ToString();
@@ -50,7 +50,7 @@ namespace AirlineLibrary
         {
                 return this.SeatNumber;
         }
-
+        
         public string setSeatNameNull()
         {
             return this.SeatNumber = null;
@@ -58,14 +58,12 @@ namespace AirlineLibrary
 
         public bool checkAvailability()
         {
-            if (true)
-            {
-                return true;
-            }
+            return isAvailable;
+            
         }
         public bool makeUnAvailable()
         {
-            return this.Available = false;
+            return this.isAvailable = false;
         }
 
         

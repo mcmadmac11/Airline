@@ -41,5 +41,17 @@ namespace Airline
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EventModel _event = new EventModel();
+            this.DataContext = _event;
+        }
+
+        private void button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Are you sure you want to confirm this flight?");
+
+        }
     }
 }

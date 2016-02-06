@@ -46,9 +46,5 @@ namespace AirlineLibrary
             this.MaintenanceStatus = maintenanceStatus;
             this.Schedule = schedule;
         }
-        //public AirPlane()
-        //{
-
-        //}
     }
 }

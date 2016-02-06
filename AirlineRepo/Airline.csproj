@@ -57,9 +57,6 @@
     </ApplicationDefinition>
     <Compile Include="EventModel.cs" />
     <Compile Include="ItineraryView.cs" />
-    <Compile Include="ItineraryWindow.xaml.cs">
-      <DependentUpon>ItineraryWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PassengerView.cs" />
     <Compile Include="seatingChartWindow.xaml.cs">
       <DependentUpon>seatingChartWindow.xaml</DependentUpon>
@@ -68,10 +65,6 @@
       <DependentUpon>ViewItineraryWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="BookFlightWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ItineraryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
